@@ -551,7 +551,7 @@ int GetAnswer ()
          Console.CursorVisible = false;
 
          System.Threading.Thread.Sleep (2000);
-         var (x, y) = Console.GetCursorPosition ();
+         var (_, y) = Console.GetCursorPosition ();
          Console.SetCursorPosition (0, y);
 
          Console.ForegroundColor = defaultForegroundColor;
@@ -663,7 +663,7 @@ void StartGame ()
 //
 // Updates timer in console. Will be launched by starting a new game in 1-second taсt
 //
-void TimerCallback (Object ?obj)
+void TimerCallback (Object ? _)
 {
    if (pauseInTimer)
       return;

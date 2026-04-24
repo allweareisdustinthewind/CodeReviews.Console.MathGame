@@ -9,10 +9,10 @@
       public string Question { get; set; } = string.Empty;
 
       // Correct answer to question
-      public int CorrectResult { get; set; } = 0;
+      public int CorrectResult { get; set; }
 
       // User's answer
-      public int UserInput { get; set; } = 0;
+      public int UserInput { get; set; }
 
       public Answer (string question, int correctResult, int userInput)
       {
@@ -78,10 +78,10 @@
       DateTime _endTime = DateTime.Now;
       
       // Uniqie number of game
-      int _gameNumber = 0;
+      int _gameNumber;
 
       // Difficulty level (0 - easy, 1 - normal, 2 - hard)
-      int _difficulty = 0;
+      int _difficulty;
 
       // Maximal length of text block with information on screen in symbols
       static int _maxLength = 44;
