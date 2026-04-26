@@ -1,8 +1,8 @@
 ﻿namespace MathGame
 {
-   //
-   // Contains information about question with user's answer 
-   //
+   /// <summary>
+   /// Contains information about question with user's answer 
+   /// </summary>
    internal class Answer
    {
       // Mathematical question in format "op1 operation op2 = " i.e. "3 x 5 = "
@@ -26,9 +26,13 @@
          return UserInput == CorrectResult;
       }
 
-      //
-      // Display question and answer on console
-      //
+      /// <summary>
+      /// Display question and answer on console
+      /// </summary>
+      /// <param name="indent"></param>
+      /// <param name="number"></param>
+      /// <param name="maxLength"></param>
+      /// <param name="maxQuestionLength"></param>
       public void Display (string indent, int number, int maxLength, int maxQuestionLength)
       {
          string textNumber = $" {number}. ";
@@ -65,9 +69,9 @@
       }
    }
 
-   //
-   // Info about one game round (all questions, answers and total statistic)
-   //
+   /// <summary>
+   /// Info about one game round (all questions, answers and total statistic)
+   /// </summary>
    public class GameResult
    {
       // All answers of round
@@ -81,7 +85,7 @@
       int _gameNumber;
 
       // Difficulty level (0 - easy, 1 - normal, 2 - hard)
-      int _difficulty;
+      Settings.Level _difficulty;
 
       // Maximal length of text block with information on screen in symbols
       static int _maxLength = 44;
@@ -89,7 +93,7 @@
       // Offset of each block from left border of window
       static string _indent = new (' ', 10);
 
-      public GameResult (int gameNumber, int difficulty)
+      public GameResult (int gameNumber, Settings.Level difficulty)
       {
          _gameNumber = gameNumber;
          _difficulty = difficulty;
@@ -105,9 +109,9 @@
          _endTime = DateTime.Now;
       }
 
-      //
-      // Display statistic of one game's round with all questions and answers
-      //
+      /// <summary>
+      /// Display statistic of one game's round with all questions and answers
+      /// </summary>
       public void Display ()
       {
          if (_answers.Count <= 0)
@@ -140,7 +144,7 @@
             Tuple.Create ("   Started:    ", _startTime.ToString ()),
             Tuple.Create ("   Ended:      ", _endTime.ToString ()),
             Tuple.Create ("   Duration:   ", (_endTime - _startTime).Seconds.ToString () + " seconds"),
-            Tuple.Create ("   Difficulty: ", _difficulty == 0 ? "easy" : _difficulty == 1 ? "normal" : "hard"),
+            Tuple.Create ("   Difficulty: ", _difficulty == Settings.Level.Easy ? "easy" : _difficulty == Settings.Level.Normal ? "normal" : "hard"),
             Tuple.Create (" ", " "),
          ];
 
@@ -177,9 +181,11 @@
          Console.ForegroundColor = defaultForeground;
       }
 
-      //
-      // Display one line of game's statistic
-      //
+      /// <summary>
+      /// Display one line of game's statistic
+      /// </summary>
+      /// <param name="name"></param>
+      /// <param name="data"></param>
       private void DisplayInfo (string name, string data)
       {
          // Text without value
