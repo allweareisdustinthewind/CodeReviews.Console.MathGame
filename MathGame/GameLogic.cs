@@ -6,15 +6,15 @@
    public class GameLogic
    {
       // Game's settings
-      Settings? _settings = null;
+      Settings? _settings;
 
       // Unique number of gamme's round
-      int _gameNumber = 0;
+      int _gameNumber;
 
       // Time spent in one round
-      int _totalSeconds = 0;
-      int _totalMinutes = 0;
-      int _totalHours = 0;
+      int _totalSeconds;
+      int _totalMinutes;
+      int _totalHours;
 
       // Default colors of console window
       ConsoleColor _defaultForegroundColor = Console.ForegroundColor;
@@ -24,10 +24,10 @@
       List<GameResult> _results = new ();
 
       Random _random = new ();
-      System.Threading.Timer? _timer = null;
+      System.Threading.Timer? _timer;
 
       // If true, then time in timer function won't be increased
-      bool _pauseInTimer = false;
+      bool _pauseInTimer;
 
       // All questions, which were already asked in one round (to not ask same question one more time)
       HashSet<string> _questions = new ();

@@ -176,37 +176,37 @@
       Settings _settings = new ();
 
       // Items for actions "Start game", "Settings" and "Show all results"
-      MenuItem? _startGameItem = null;
-      MenuItem? _settingsItem = null;
-      MenuItem? _showResultItem = null;
+      MenuItem? _startGameItem;
+      MenuItem? _settingsItem;
+      MenuItem? _showResultItem;
       
       // Begin and end of settings block
-      MenuItem? _settingsBlockBegin = null;
-      MenuItem? _settingsBlockEnd = null;
+      MenuItem? _settingsBlockBegin;
+      MenuItem? _settingsBlockEnd;
       
       // Items of difficulty levels
-      MenuItem? _itemEasy = null;
-      MenuItem? _itemNormal = null;
-      MenuItem? _itemHard = null;
+      MenuItem? _itemEasy;
+      MenuItem? _itemNormal;
+      MenuItem? _itemHard;
 
       // Items of game's mode (random / fix)
-      MenuItem? _itemModeRandom = null;
-      MenuItem? _itemModeFix = null;
+      MenuItem? _itemModeRandom;
+      MenuItem? _itemModeFix;
 
       // Items of mathematical operations
-      MenuItem? _itemOpAdd = null;
-      MenuItem? _itemOpSub = null;
-      MenuItem? _itemOpMul = null;
-      MenuItem? _itemOpDiv = null;
+      MenuItem? _itemOpAdd;
+      MenuItem? _itemOpSub;
+      MenuItem? _itemOpMul;
+      MenuItem? _itemOpDiv;
 
       // Actual selected menu item
-      MenuItem? _curItem = null;
+      MenuItem? _curItem;
 
       // Y-position of item "Show all results"
-      int _posShowResult = 0;
+      int _posShowResult;
 
       // If true, then block with all settings of the game is visible
-      bool _isSettingsShown = false;
+      bool _isSettingsShown;
 
       // All game's logic is hier
       GameLogic? _logic = null;
